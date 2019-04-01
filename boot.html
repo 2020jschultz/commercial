@@ -15,18 +15,45 @@
     </header>
     <section class = "container">
         <div class = "row">
-          <div class = "col">
+          <div class = "col-12 sm-6 col-lg-4 option">
           <h3 class = "title">Option A</h3>
+          <p>Lorem ipsum dolor sit amet consecteur adipiscing elit. Dolorem voluptas cum nulla quo id officiis temporibus quod sed, ex nescuint alias adipisci architecto reprehenderit nemo repundiandae repellat unde harum pariatur.</p>
+            <a class = "price title" href = "">$19.99</a>
         </div>
-        <div class = "col">
-            <h3 class = "title">Option B</h3>
-          </div>
-          <div class = "col">
-              <h3 class = "title">Option C</h3>
-            </div>
-            </div>
+        <div class = "col-12 sm-6 col-lg-4 option">
+          <h3 class = "title">Option A</h3>
+          <p>Lorem ipsum dolor sit amet consecteur adipiscing elit. Dolorem voluptas cum nulla quo id officiis temporibus quod sed, ex nescuint alias adipisci architecto reprehenderit nemo repundiandae repellat unde harum pariatur.</p>
+            <a class = "price title" href = "">$24.99</a>
+        </div>
+        <div class = "col-12 sm-6 col-lg-4 option">
+          <h3 class = "title">Option A</h3>
+          <p>Lorem ipsum dolor sit amet consecteur adipiscing elit. Dolorem voluptas cum nulla quo id officiis temporibus quod sed, ex nescuint alias adipisci architecto reprehenderit nemo repundiandae repellat unde harum pariatur.</p>
+            <a class = "price title" href = "">$29.99</a>
+        </div>
+        <form id = "cart" class = "row" method = "GET" action = "checkout.html" oninput = "calculate()">
+          Options:
+          <select name = "option" id = "option">
+            <option value = "19.99">Buy A</option>
+            <option value = "24.99">Buy B</option>
+            <option value = "29.99">Buy C</option>
+          </select>
+          Months: <input id ="time" name = "time" type = "number" value = "12" min = "0">
+          Total: <output id = "result" name = "out" for = "option time"></output>
+          <input type = "sumbit" value ="submit">
+        </form>
         </section>
-    </header>
+
+        <script>
+          function calculate(){
+            let doc = document;
+            let option = doc.getElementById("option");
+            let time = doc.getElementById("time");
+            let result = doc.getElementById("result");
+
+            result.value = "$" + Number(parseFloat(option.value) * parseInt(time.value)).toPrecision(5);
+          }
+        </script>
+    
 
 
 
